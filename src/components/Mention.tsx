@@ -1,9 +1,14 @@
 import React from 'react';
 
-export default function Mention({children}) {
+export default function Mention({children, href}) {
     return (
-        <span className='mention'>
+        <a
+            className='mention'
+            href={href}
+            target='_blank'
+            rel='noopener noreferrer'
+        >
             {children}
-        </span>
+        </a>
     );
 }
