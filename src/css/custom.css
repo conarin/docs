@@ -18,6 +18,8 @@
 
   --mention-color: #5865f2;
   --mention-background-color: #5865f226;
+  --hovered-mention-color: #ffffff;
+  --hovered-mention-background-color: #5865f2;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -33,9 +35,17 @@
 
   --mention-color: #c9cdfb;
   --mention-background-color: #5865f24c;
+  --hovered-mention-color: #ffffff;
+  --hovered-mention-background-color: #5865f2;
 }
 
 a.mention {
   color: var(--mention-color);
   background-color: var(--mention-background-color);
+}
+
+a.mention:hover {
+  color: var(--hovered-mention-color);
+  background-color: var(--hovered-mention-background-color);
+  text-decoration: none;
 }
