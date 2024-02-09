@@ -39,12 +39,16 @@
   --hovered-mention-background-color: #5865f2;
 }
 
-a.mention {
+.mention {
   color: var(--mention-color);
   background-color: var(--mention-background-color);
 }
 
-a.mention:hover {
+.mention a {
+  color: var(--mention-color);
+}
+
+.mention:hover, .mention a:hover {
   color: var(--hovered-mention-color);
   background-color: var(--hovered-mention-background-color);
   text-decoration: none;
