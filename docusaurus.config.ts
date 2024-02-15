@@ -42,6 +42,12 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'intro',
+          label: 'はじめに',
+          position: 'left'
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'discord',
           label: 'Discord Bot',
           position: 'left'
