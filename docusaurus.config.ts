@@ -62,7 +62,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © 2020-${new Date().getFullYear()} conarin, Built with Docusaurus.`
+      copyright: `Copyright © 2019-${new Date().getFullYear()} conarin, Built with Docusaurus.`
     },
     prism: {
       theme: prismThemes.github,
