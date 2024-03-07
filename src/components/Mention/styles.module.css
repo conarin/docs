@@ -1,0 +1,26 @@
+:root {
+    --mention-color: #5865f2;
+    --mention-background-color: #5865f226;
+    --hovered-mention-color: #ffffff;
+    --hovered-mention-background-color: #5865f2;
+}
+
+[data-theme='dark'] {
+    --mention-color: #c9cdfb;
+    --mention-background-color: #5865f24c;
+}
+
+.mention {
+    color: var(--mention-color);
+    background-color: var(--mention-background-color);
+}
+
+.mention a {
+    color: var(--mention-color);
+}
+
+.mention:hover, .mention a:hover {
+    color: var(--hovered-mention-color);
+    background-color: var(--hovered-mention-background-color);
+    text-decoration: none;
+}
