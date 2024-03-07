@@ -1,0 +1,46 @@
+:root {
+    --label-color: #ffffff;
+    --primary-color: #5865f2;
+    --secondary-color: #4e5058;
+    --success-color: #248046;
+    --danger-color: #da373c;
+}
+
+.button {
+    color: var(--label-color);
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 4px 8px 4px 0;
+    border: none;
+    border-radius: 3px;
+}
+
+.button:hover {
+    color: var(--label-color);
+    text-decoration: none;
+}
+
+.button:hover:not(.disabled) {
+    opacity: 0.8;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+}
+
+.success {
+    background-color: var(--success-color);
+}
+
+.danger {
+    background-color: var(--danger-color);
+}
