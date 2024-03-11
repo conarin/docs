@@ -1,4 +1,7 @@
-> <Mention>@JSTimerBot</Mention> repeat \<日にち|曜日> \<時刻> [メッセージ] [チャンネル]
+<DiscordMessages>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> repeat \<日にち|曜日> \<時刻> [メッセージ] [チャンネル]</DiscordMessage>
+</DiscordMessages>
+<br/>
 
 特定の曜日や日にちに通知するタイマーをセットします。  
 コマンド名は`cron`、`schedule`、`interval`でも可能です。
@@ -11,9 +14,11 @@
 | チャンネル  | 通知するチャンネルを指定できます。<br/>指定方法については[チャンネルの指定方法について](../channel.mdx)をご確認ください。                   |     |
 
 ## 例
-- <Mention>@JSTimerBot</Mention> repeat 日曜日 18:30 サザエ #通知チャンネル
-- <Mention>@JSTimerBot</Mention> cron 毎日 0時 日付が変わりました
-- <Mention>@JSTimerBot</Mention> interval 25日 09:00 お賃金 <Mention>#channel</Mention>
+<DiscordMessages compactMode>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> repeat 日曜日 18:30 サザエ #通知チャンネル</DiscordMessage>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> cron 毎日 0時 日付が変わりました</DiscordMessage>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> interval 25日 09:00 お賃金 <DiscordMention type="channel">チャンネル名</DiscordMention> </DiscordMessage>
+</DiscordMessages>
 
 ## 日にち/曜日の指定方法
 毎月○日、毎日、毎週○曜日のいずれかを設定できます。

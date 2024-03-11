@@ -1,4 +1,7 @@
-> <Mention>@JSTimerBot</Mention> set \<日時\> [メッセージ] [チャンネル]
+<DiscordMessages>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> set \<日時\> [メッセージ] [チャンネル]</DiscordMessage>
+</DiscordMessages>
+<br/>
 
 特定の日時に通知するタイマーをセットします。
 
@@ -9,9 +12,11 @@
 | チャンネル  | 通知するチャンネルを指定できます。<br/>指定方法については[チャンネルの指定方法について](../channel.mdx)をご確認ください。                   |     |
 
 ## 例
-- <Mention>@JSTimerBot</Mention> set 12月25日の午後6時
-- <Mention>@JSTimerBot</Mention> set 1m30s 1分30秒経ちました #チャンネル名
-- <Mention>@JSTimerBot</Mention> set 2024 ことよろ <Mention>#channel</Mention>
+<DiscordMessages compactMode>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> set 12月25日の午後6時</DiscordMessage>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> set 1m30s 1分30秒経ちました チャンネル名</DiscordMessage>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> set 2024 ことよろ <DiscordMention type="channel">チャンネル名</DiscordMention> </DiscordMessage>
+</DiscordMessages>
 
 ## 日時の指定方法
 

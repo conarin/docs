@@ -1,4 +1,7 @@
-> <Mention>@JSTimerBot</Mention> list [all] [link|url]
+<DiscordMessages>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> list [all] [link|url]</DiscordMessage>
+</DiscordMessages>
+<br/>
 
 セットしているタイマーの一覧を表示します。  
 コマンド名は`ls`でも可能です。
@@ -9,6 +12,8 @@
 | link \| url | セット時のメッセージへのリンクを表示します。           |    |
 
 ## 例
-- <Mention>@JSTimerBot</Mention> list
-- <Mention>@JSTimerBot</Mention> list url
-- <Mention>@JSTimerBot</Mention> ls all link
+<DiscordMessages compactMode>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> list</DiscordMessage>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> list url</DiscordMessage>
+    <DiscordMessage author="user"><DiscordMention>JSTimerBot</DiscordMention> ls all link</DiscordMessage>
+</DiscordMessages>
