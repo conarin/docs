@@ -71,6 +71,11 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula
     },
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true
+      }
+    }
   } satisfies Preset.ThemeConfig
 };
 
