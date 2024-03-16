@@ -13,6 +13,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   intro: ['index', 'tos', 'privacy', 'trademark', 'contact'],
   discord: [
+    'discord/index',
     {
       type: 'category',
       label: 'JSTimerBot',
@@ -22,6 +23,9 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'discord/timer/index',
+        'discord/timer/changelog',
+        'discord/timer/channel',
+        'discord/timer/mention',
         {
           type: 'category',
           label: 'コマンド',
@@ -37,10 +41,7 @@ const sidebars: SidebarsConfig = {
             'discord/timer/commands/list',
             'discord/timer/commands/test'
           ]
-        },
-        'discord/timer/channel',
-        'discord/timer/mention',
-        'discord/timer/changelog'
+        }
       ]
     }
   ],
