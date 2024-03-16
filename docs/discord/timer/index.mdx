@@ -1,0 +1,92 @@
+---
+title: はじめに
+pagination_next: discord/timer/commands/index
+---
+
+## 概要
+指定した日時に<Mention>@メンション</Mention>とメッセージを送信します。テキストチャンネルかDMで利用できます。  
+ご質問やご要望などがございましたら[サポートサーバー](https://redirect.conarin.com/discord/bot/timer/support)または[お問い合わせ](../../contact.mdx)よりお問い合わせください。  
+
+<Button to='https://redirect.conarin.com/discord/bot/timer/invite'>:robot:招待する</Button>
+<Button to='https://redirect.conarin.com/discord/bot/timer/support' style='secondary'>:question:サポートサーバーに入る</Button>
+
+:::note
+
+通知先のチャンネルが削除されたり、Botの閲覧権限が無くなったりした場合、タイマーは自動でキャンセルされます。  
+また、タイマーをセットしたユーザーがサーバーから退出している場合は通知されませんが、再度サーバーに参加すると通知されます。
+
+:::
+
+## コマンドの使い方
+本Botでは、以下のようにメンションを用いてコマンドを入力します。
+
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>JSTimerBot</DiscordMention> コマンド パラメータ</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+また、ニックネームに`[]`(半角の角括弧)を含めることで、`[]`内の文字をメンションの代わりとして使用することもできます。
+<DiscordMessages>
+    <DiscordMessage author="例1"><DiscordMention>[/]JSTimerBot</DiscordMention> set 来週月曜の午後9時 <br/>↓<br/>/set 来週月曜の午後9時</DiscordMessage>
+    <DiscordMessage author="例2"><DiscordMention>[t!]JSTimerBot</DiscordMention> set 来週月曜の午後9時 <br/>↓<br/>t!set 来週月曜の午後9時</DiscordMessage>
+</DiscordMessages>
+
+## コマンド一覧
+| コマンド名 (別名)                                                              | 概要                           |
+|-------------------------------------------------------------------------|------------------------------|
+| [:alarm_clock: set](./commands/set.mdx)                                 | 特定の日時に通知するタイマーをセットします。       |
+| [:repeat: repeat (cron, schedule, interval)](./commands/repeat.mdx)     | 特定の曜日や日にちに通知するタイマーをセットします。   |
+| [:wastebasket: cancel (remove, rm, delete, del)](./commands/cancel.mdx) | セットしたタイマーをキャンセルします。          |
+| [:page_facing_up: list (ls)](./commands/list.mdx)                       | セットしたタイマーの一覧を表示します。          |
+| [:memo: test](./commands/test.mdx)                                      | setコマンドの動作確認ができます。セットはされません。 |
+
+:::note
+
+### パラメータについて
+
+- パラメータは半角のスペースで区切って入力してください。
+- `<>`で囲ってあるパラメータは**必須**です。
+- `[]`で囲ってあるパラメータは**任意**です。
+- `[A|B|C]`のように`|`で区切られているものは`[]`または`<>`内のいずれか1つを入力してください。
+- `[パラメータ名 ...]`のように`...`がある場合は複数指定することができます。
+- 日本語で書かれている場合は状況に応じた文字を入力してください。
+
+:::
+
+## 権限
+本Botは招待時に以下の権限を要求します。
+
+| 名称       | 使用箇所                |
+|----------|---------------------|
+| チャンネルを見る | 全てのコマンド<br/>タイマー実行時 |
+| メッセージを送信 | 全てのコマンド<br/>タイマー実行時 |
+| 埋め込みリンク  | 全てのコマンド<br/>タイマー実行時 |
+
+:::note
+
+招待URLでは`@everyone、@here、全てのロールにメンション`の権限を<u>**要求していません**</u>。  
+<Mention>@everyone</Mention>や<Mention>@here</Mention>、<Mention>@ロール</Mention>へメンションさせたい場合はBotに適切な権限を与えてください。  
+メンションする権限がBotにない場合はメンションされませんのでご注意ください。
+
+:::
+
+:::tip
+
+Botが起動しているにもかかわらず、コマンドの反応がない場合は権限をご確認ください。  
+権限の不足によって返信ができていないことがあります。  
+それでも改善されない場合は[お問い合わせ](../../contact.mdx)からお問い合わせください。
+
+:::
+
+## プライバシーポリシー
+本Botの[setコマンド](./commands/set.mdx)または[repeatコマンド](./commands/set.mdx)を利用する場合、[プライバシーポリシー](../../privacy.mdx)の内容に加え、以下の情報が保存されます。
+
+| 内容              | 使用箇所                             |
+|-----------------|----------------------------------|
+| セットしたユーザーのID    | タイマーの通知<br/>listコマンド<br/>ダッシュボード |
+| 通知を送信するチャンネルのID | タイマーの通知<br/>ダッシュボード              |
+| セットしたチャンネルのID   | タイマーの通知<br/>listコマンド<br/>ダッシュボード |
+| セットしたメッセージのID   | タイマーの通知<br/>listコマンド<br/>ダッシュボード |
+| 通知する日時          | タイマーの通知<br/>listコマンド<br/>ダッシュボード |
+| 通知する日時の入力内容     | スヌーズ機能                           |
+| 通知時に表示するメッセージ   | タイマーの通知<br/>listコマンド<br/>ダッシュボード |
