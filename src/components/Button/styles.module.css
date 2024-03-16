@@ -4,6 +4,7 @@
     --secondary-color: #4e5058;
     --success-color: #248046;
     --danger-color: #da373c;
+    --blue-color: #1d9bf0;
 }
 
 .button {
@@ -44,4 +45,8 @@
 
 .danger {
     background-color: var(--danger-color);
+}
+
+.blue {
+    background-color: var(--blue-color);
 }

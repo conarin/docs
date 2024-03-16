@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 interface ButtonProps {
     children: React.ReactElement;
     disabled?: boolean;
-    style?: 'primary' | 'secondary' | 'success' | 'danger';
+    style?: 'primary' | 'secondary' | 'success' | 'danger' | 'blue';
     to?: string;
 }
 
