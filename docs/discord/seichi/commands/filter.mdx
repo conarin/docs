@@ -1,0 +1,24 @@
+---
+description: 指定したプレイヤーのみの日間整地量ランキングの画像を表示します。
+---
+
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> filter \<mcid ...> [type=種類] [duration=期間]</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+指定したプレイヤーのみの日間整地量ランキングの画像を表示します。  
+全体での順位ではなく、指定したプレイヤー間での順位を表示します。整地イベントなどの順位表示にご活用ください。  
+コマンド名は`event`でも可能です。
+
+| パラメータ名   | 概要                                              | 入力形式                                                                               | 必須  | 初期値   |
+|----------|-------------------------------------------------|------------------------------------------------------------------------------------|-----|-------|
+| mcid     | プレイヤーのMCIDを入力します。スペースかコンマか改行で区切ることで30人まで指定できます。 | \[a-zA-Z0-9_]で2~16文字                                                               | :o: |       |
+| type     | 種類を入力します。                                       | type=\<break\|build\|time\|vote><br/><br/>左から順番に整地量、建築量、接続時間、投票数です。                | 	   | break |
+| duration | 期間を入力します。                                       | duration=\<total\|daily\|weekly\|monthly\|yearly><br/><br/>左から順番に総合、日間、週間、月間、年間です。 |     | daily |
+
+## 例
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> filter conarin, PowderPhosphorus type=build<br/>↓<br/>`conarin`と`PowderPhosphorus`の日間建築量ランキングを表示</DiscordMessage>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> event unchama mine_chama duration=total<br/>↓<br/>`unchama`と`mine_chama`の総合整地量ランキングを表示</DiscordMessage>
+</DiscordMessages>
