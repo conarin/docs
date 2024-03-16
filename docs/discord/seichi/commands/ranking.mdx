@@ -1,0 +1,25 @@
+---
+description: ランキングの画像を表示します。
+---
+
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> ranking [rank=順位] [limit=件数] [type=種類] [duration=期間]</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ランキングの画像を表示します。  
+コマンド名は`rank`でも可能です。
+
+| パラメータ名          | 概要                  | 入力形式                                                                               | 必須 | 初期値   |
+|-----------------|---------------------|------------------------------------------------------------------------------------|----|-------|
+| rank<br/>offset | 開始順位を入力します。         | rank=数字                                                                            |    | 1     |
+| limit<br/>lim   | 最大件数を1~30の範囲で入力します。 | limit=数字                                                                           |    | 20    |
+| type            | 種類を入力します。           | type=\<break\|build\|time\|vote><br/><br/>左から順番に整地量、建築量、接続時間、投票数です。                | 	  | break |
+| duration        | 期間を入力します。           | duration=\<total\|daily\|weekly\|monthly\|yearly><br/><br/>左から順番に総合、日間、週間、月間、年間です。 |    | daily |
+
+## 例
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> ranking<br/>↓<br/>日間整地量の1位\~20位を表示</DiscordMessage>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> ranking rank=1 limit=1<br/>↓<br/>日間整地量1位の画像を表示</DiscordMessage>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> rank rank=10 limit=10 type=build duration=monthly<br/>↓<br/>月間建築量の10位\~19位の画像を表示</DiscordMessage>
+</DiscordMessages>
