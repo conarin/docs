@@ -1,0 +1,29 @@
+---
+description: ワールドのマップ画像を表示します。
+---
+
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> map \<サーバー名> \<ワールド名> [スキン表示]</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ワールドのマップ画像を表示します。
+
+:::warning
+
+Cloudflareによる保護のため、こちらのコマンドは現在動作しません。
+
+:::
+
+| パラメータ名 | 概要                  | 入力形式                                                            | 必須  | 初期値 |
+|--------|---------------------|-----------------------------------------------------------------|-----|-----|
+| サーバー名  | サーバー名を入力します。        | \<s1\|s2\|s3\|s5\|s7><br/><br/>左からアルカディア、エデン、ヴァルハラ、整地専用、公共施設です。 | :o: |     |
+| ワールド名  | ワールド名(キーワード)を入力します。 | 第一整地<br/>整地1<br/>メイン など                                         | :o: |     |
+| スキン表示  | プレイヤーのスキンを表示します。    | \[skin\|head]                                                   |     |     |
+
+## 例
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> map s1 建築/build<br/>↓<br/>アルカディアサーバーの建築ワールドのマップ画像を表示</DiscordMessage>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> map s5 地球/earth skin<br/>↓<br/>第一整地専用サーバーの整地Earthのスキン付きマップ画像を表示</DiscordMessage>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> map s2 2 head<br/>↓<br/>エデンサーバーの整地2のスキン付きマップ画像を表示</DiscordMessage>
+</DiscordMessages>
