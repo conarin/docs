@@ -1,0 +1,111 @@
+---
+title: はじめに
+pagination_next: discord/seichi/changelog
+---
+
+## 概要
+本Botは[うんちゃま](https://twitter.com/tsukkkkkun)氏が運営されているマインクラフト公開マルチサーバー、「[ギガンティック☆整地鯖](https://www.seichi.network/gigantic)」に参加されている方へ向けた非公式のBotです。  
+ワールドマップやランキング、プレイヤーデータなどの画像を表示したり、リンクを検索したりすることができます。  
+ご質問やご要望などがございましたら[サポートサーバー](https://redirect.conarin.com/discord/bot/seichi/support)または[お問い合わせ](../../contact.mdx)よりお問い合わせください。
+
+<Button to='https://redirect.conarin.com/discord/bot/seichi/invite'>:robot:招待する</Button>
+<Button to='https://redirect.conarin.com/discord/bot/seichi/support' style='secondary'>:question:サポートサーバーに入る</Button>
+<Button to='https://docs.conarin.com/api' style='secondary'>REST API</Button>
+
+:::warning
+
+Cloudflareによる保護のため、一部のコマンド(map, crop, playerlist)は現在動作しません。
+
+:::
+
+### Twitter(X)版
+<Button to='https://redirect.conarin.com/discord/bot/seichi/twitter' style='blue'>@seichibot</Button>  
+:::note
+
+Twitter(X)版でのコマンド実行機能およびタイムラプス機能は廃止しました。
+
+:::
+
+### Web版
+searchコマンドと同機能のものをブラウザからご利用いただけます。  
+→ https://seichi.conarin.com/search
+
+整地鯖ランキングを公開しています。  
+→ https://seichi.conarin.com/ranking
+
+## コマンドの使い方
+本Botでは、以下のようにメンションを用いてコマンドを入力します。
+
+<DiscordMessages>
+    <DiscordMessage><DiscordMention>[非公式] 整地鯖Bot</DiscordMention> コマンド パラメータ</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+また、ニックネームに`[]`(半角の角括弧)を含めることで、`[]`内の文字をメンションの代わりとして使用することもできます。
+<DiscordMessages>
+    <DiscordMessage author="例1"><DiscordMention>[/]整地鯖Bot</DiscordMention> ranking<br/>↓<br/>/ranking</DiscordMessage>
+    <DiscordMessage author="例2"><DiscordMention>[s!]整地鯖Bot</DiscordMention> ranking<br/>↓<br/>s!ranking</DiscordMessage>
+</DiscordMessages>
+
+## コマンド一覧
+| コマンド名 (別名)                                                    | 概要                               |
+|---------------------------------------------------------------|----------------------------------|
+| [ranking (rank)](./commands/ranking.mdx)                      | ランキングの画像を表示します。                  |
+| [filter (event)](./commands/filter.mdx)                       | 指定したプレイヤーのみの日間整地量ランキングの画像を表示します。 |
+| [player (user)](./commands/player.mdx)                        | プレイヤーのランキング画像を表示します。             |
+| [map](./commands/map.mdx)                                     | ワールドのマップ画像を表示します。                |
+| [crop](./commands/crop.mdx)                                   | ワールドの指定した範囲のマップ画像を表示します。         |
+| [playerlist](./commands/playerlist.mdx)                       | サーバーのプレイヤーリストを表示します。             |
+| [search (link)](./commands/search.mdx)                        | GT整地鯖とうんちゃま氏に関連するページを検索します。      |
+| [schedule (cron, interval, webhook)](./commands/schedule.mdx) | 任意のコマンドを指定した時刻に実行します。            |
+
+:::warning
+
+Cloudflareによる保護のため、一部のコマンド(map, crop, playerlist)は現在動作しません。
+
+:::
+
+:::note
+
+### パラメータについて
+
+- パラメータは半角のスペースで区切って入力してください。
+- `<>`で囲ってあるパラメータは**必須**です。
+- `[]`で囲ってあるパラメータは**任意**です。
+- `[A|B|C]`のように`|`で区切られているものは`[]`または`<>`内のいずれか1つを入力してください。
+- `[パラメータ名 ...]`のように`...`がある場合は複数指定することができます。
+- 日本語で書かれている場合は状況に応じた文字を入力してください。
+
+:::
+
+## 権限
+本Botは招待時に以下の権限を要求します。
+
+| 名称       | 使用箇所                                                                                |
+|----------|-------------------------------------------------------------------------------------|
+| チャンネルを見る | 全てのコマンド                                                                             |
+| メッセージを送信 | 全てのコマンド                                                                             |
+| 埋め込みリンク  | helpコマンド<br/>playerlistコマンド<br/>searchコマンド<br/>scheduleコマンド<br/>エラー発生時              |
+| ファイルを添付  | rankingコマンド<br/>filterコマンド<br/>playerコマンド<br/>mapコマンド<br/>cropコマンド<br/>scheduleコマンド |
+
+:::tip
+
+Botが起動しているにもかかわらず、コマンドの反応がない場合は権限をご確認ください。  
+権限の不足によって返信ができていないことがあります。  
+それでも改善されない場合は[お問い合わせ](../../contact.mdx)からお問い合わせください。
+
+:::
+
+## プライバシーポリシー
+本Botの[scheduleコマンド](./commands/schedule.mdx)を利用する場合、[プライバシーポリシー](../../privacy.mdx)の内容に加え、以下の情報が保存されます。
+
+| 内容              | 使用箇所                      |
+|-----------------|---------------------------|
+| 登録したユーザーのID     | listコマンド<br/>scheduleコマンド |
+| 実行するコマンドの内容     | listコマンド<br/>メッセージの送信     |
+| 実行する時刻          | listコマンド<br/>メッセージの送信     |
+| WebhookのチャンネルID | listコマンド                  |
+| WebhookのサーバーID	 | 現在未使用(ダッシュボードで使用予定)       |
+| Webhookの名前	     | listコマンド                  |
+| WebhookのID      | メッセージの送信                  |
+| Webhookのトークン    | メッセージの送信                  |
