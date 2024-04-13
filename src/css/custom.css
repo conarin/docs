@@ -16,11 +16,6 @@
   --ifm-color-primary-lightest: hsl(var(--ifm-color-primary-base) 45.6%);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  --mention-color: #5865f2;
-  --mention-background-color: #5865f226;
-  --hovered-mention-color: #ffffff;
-  --hovered-mention-background-color: #5865f2;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -34,9 +29,4 @@
   --ifm-color-primary-lighter: hsl(var(--ifm-color-primary-base) 52.25%);
   --ifm-color-primary-lightest: hsl(var(--ifm-color-primary-base) 59%);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  --mention-color: #c9cdfb;
-  --mention-background-color: #5865f24c;
-  --hovered-mention-color: #ffffff;
-  --hovered-mention-background-color: #5865f2;
 }
