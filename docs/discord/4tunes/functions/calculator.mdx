@@ -1,0 +1,40 @@
+---
+title: 電卓
+description: 計算式を入力するとその結果を表示します。
+---
+
+<DiscordMessages>
+    <DiscordMessage>(1+1-1)*1/1^1</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+入力した計算式の結果を表示します。  
+式が成り立っている場合、自動で返信します。
+
+:::note
+
+`6/2(1+2)`のように演算子を省略した書き方はできません。  
+`6/2*(1+2)`や`6/(2*(1+2))`のように省略せずに記述してください。
+
+:::
+
+## 使用できる文字
+| 文字       | 説明        |
+|----------|-----------|
+| +        | 加算        |
+| -        | 減算<br/>負数 |
+| *<br/>×  | 乗算        |
+| /<br/>÷  | 除算        |
+| ^<br/>** | べき乗       |
+| %        | 剰余        |
+| (        | 開き丸括弧     |
+| )        | 閉じ丸括弧     |
+| .        | 小数点       |
+| 0~9      | 数値        |
+
+## 例
+<DiscordMessages compactMode>
+    <DiscordMessage>(1+2)*3</DiscordMessage>
+    <DiscordMessage>0.1+0.2</DiscordMessage>
+    <DiscordMessage>5%2</DiscordMessage>
+</DiscordMessages>
