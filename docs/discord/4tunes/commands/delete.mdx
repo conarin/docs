@@ -1,0 +1,26 @@
+---
+description: メッセージを指定した数だけ削除します。
+---
+
+<DiscordMessages>
+    <DiscordMessage>/delete \<削除件数></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+メッセージを指定した数だけ削除します。
+
+:::note
+
+本コマンドを利用するには、メッセージの管理権限が必要です。
+
+:::
+
+| パラメータ名 | 概要                            | 必須  |
+|--------|-------------------------------|-----|
+| 削除件数   | 1以上100以下の整数値を半角のアラビア数字で入力します。 | :o: |
+
+## 例
+<DiscordMessages compactMode>
+    <DiscordMessage>/delete number:1</DiscordMessage>
+    <DiscordMessage>/delete number:100</DiscordMessage>
+</DiscordMessages>
