@@ -1,0 +1,29 @@
+---
+description: メンバーのポイントを管理できます。
+---
+
+<DiscordMessages>
+    <DiscordMessage>/point \<サブコマンド> \<メンバー> \<ポイント数></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+メンバーのポイントを管理できます。
+
+:::note
+
+本コマンドを利用するには、サーバーの管理者権限が必要です。
+
+:::
+
+| パラメータ名 | 概要                                            | 必須  |
+|--------|-----------------------------------------------|-----|
+| サブコマンド | `add`、`sub`、`set`のいずれかを入力します。                 | :o: |
+| メンバー   | メンバーを入力します。                                   | :o: |
+| ポイント数  | `add`、`sub`は1以上、`set`は任意の整数値を半角のアラビア数字で入力します。 | :o: |
+
+## 例
+<DiscordMessages compactMode>
+    <DiscordMessage>/point add member:4Tunes point:10</DiscordMessage>
+    <DiscordMessage>/point sub member:4Tunes point:5</DiscordMessage>
+    <DiscordMessage>/point set member:4Tunes point:-100</DiscordMessage>
+</DiscordMessages>
