@@ -1,0 +1,93 @@
+---
+description: ロールパネルの作成や編集をします。
+---
+
+<DiscordMessages>
+    <DiscordMessage>/rolepanel \<サブコマンド></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ロールパネルの作成や編集をします。  
+作成したロールパネルを削除したい場合はメッセージごと削除してください。
+
+:::note
+
+本コマンドを利用するには、管理権限が必要です。
+
+:::
+
+## サブコマンド
+| サブコマンド名           | 概要                 |
+|-------------------|--------------------|
+| [create](#create) | ロールパネルを作成します。      |
+| [edit](#edit)     | ロールパネルの見た目を変更します。  |
+| [add](#add)       | ロールパネルにロールを追加します。  |
+| [remove](#remove) | ロールパネルからロールを除去します。 |
+
+---
+
+### create
+<DiscordMessages>
+    <DiscordMessage>/rolepanel create \[title] \[color]</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ロールパネルを作成します。
+
+| パラメータ名 | 概要                 | 必須 |
+|--------|--------------------|----|
+| title  | タイトルを入力します。 |    |
+| color  | HEXカラーコードを入力します。   |    |
+
+---
+
+### edit
+<DiscordMessages>
+    <DiscordMessage>/rolepanel edit \<id\> \[title] \[color]</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ロールパネルの見た目を変更します。
+
+| パラメータ名 | 概要                 | 必須  |
+|--------|--------------------|-----|
+| id     | 作成時に発行されるidを入力します。 | :o: |
+| title  | タイトルを入力します。        |     |
+| color  | HEXカラーコードを入力します。   |     |
+
+---
+
+### add
+<DiscordMessages>
+    <DiscordMessage>/rolepanel add \<id\> \<role\></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ロールパネルにロールを追加します。
+
+| パラメータ名 | 概要                 | 必須  |
+|--------|--------------------|-----|
+| id     | 作成時に発行されるidを入力します。 | :o: |
+| role   | 追加するロールを入力します。     | :o: |
+
+---
+
+### remove
+<DiscordMessages>
+    <DiscordMessage>/rolepanel remove \<id\> \<number\></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ロールパネルからロールを除去します。
+
+| パラメータ名 | 概要                 | 必須  |
+|--------|--------------------|-----|
+| id     | 作成時に発行されるidを入力します。 | :o: |
+| number | 除去するロールの番号を入力します。  | :o: |
+
+
+## 例
+<DiscordMessages compactMode>
+    <DiscordMessage>/rolepanel create</DiscordMessage>
+    <DiscordMessage>/rolepanel create title:ロールパネル color:00ff00</DiscordMessage>
+</DiscordMessages>
