@@ -1,0 +1,68 @@
+---
+description: レベルアップ通知やログなどの設定をします。
+---
+
+<DiscordMessages>
+    <DiscordMessage>/settings \<サブコマンド></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+レベルアップ通知やログなどの設定をします。
+
+:::note
+
+本コマンドを利用するには、管理権限が必要です。
+
+:::
+
+## サブコマンド
+| サブコマンド名                   | 概要               |
+|---------------------------|------------------|
+| [show](#show)             | 現在の設定を表示します。     |
+| [set level_up](#level-up) | レベルアップ通知の設定をします。 |
+| [set log](#log)           | ログの設定をします。       |
+
+---
+
+### show
+<DiscordMessages>
+    <DiscordMessage>/settings show</DiscordMessage>
+</DiscordMessages>
+<br/>
+
+現在の設定を表示します。
+
+---
+
+### level up
+<DiscordMessages>
+    <DiscordMessage>/settings set level_up \<送信設定\></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+レベルアップ通知の設定をします。
+
+| パラメータ名 | 概要                                                                              | 必須  |
+|--------|---------------------------------------------------------------------------------|-----|
+| 送信設定   | `送信しない`か`指定したチャンネル`か`同じチャンネル`のいずれかを選択します。<br/>`指定したチャンネル`の場合は続けて送信先チャンネルを入力します。 | :o: |
+
+---
+
+### log
+<DiscordMessages>
+    <DiscordMessage>/settings set log \<送信設定\></DiscordMessage>
+</DiscordMessages>
+<br/>
+
+ログの設定をします。
+
+| パラメータ名 | 概要                                                                     | 必須  |
+|--------|------------------------------------------------------------------------|-----|
+| 送信設定   | `送信しない`か`指定したチャンネル`かのどちらかを選択します。<br/>`指定したチャンネル`の場合は続けて送信先チャンネルを入力します。 | :o: |
+
+## 例
+<DiscordMessages compactMode>
+    <DiscordMessage>/settings show</DiscordMessage>
+    <DiscordMessage>/settings set level_up choices:同じチャンネル</DiscordMessage>
+    <DiscordMessage>/settings set log choices:❌送信しない</DiscordMessage>
+</DiscordMessages>
