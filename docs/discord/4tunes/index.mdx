@@ -1,0 +1,89 @@
+---
+title: はじめに
+pagination_next: discord/4tunes/changelog/index
+---
+
+## 概要
+conarinの個人Discordサーバー(整地鯖民向けサーバー)で利用している、非公開の多機能Botです。
+
+## コマンドの使い方
+本Botでは、スラッシュコマンドを使用してコマンドを入力します。
+
+## コマンド一覧
+| コマンド名                                 | 概要                              |
+|---------------------------------------|---------------------------------|
+| [avatar](./commands/avatar.mdx)       | 指定したユーザーのアバターを表示します。            |
+| [color](./commands/color.mdx)         | 指定したHEXカラーコードの画像を表示します。         |
+| [daily](./commands/daily.mdx)         | ログインボーナスを受け取ります。                |
+| [delete](./commands/delete.mdx)       | メッセージを指定した数だけ削除します。             |
+| [ping](./commands/ping.mdx)           | Pong!を返します。                     |
+| [point](./commands/point.mdx)         | メンバーのポイントを管理できます。               |
+| [random](./commands/random.mdx)       | 指定したロールからランダムにメンバーを抽出します。       |
+| [ranking](./commands/ranking.mdx)     | 発言数、経験値、ポイントのランキングを表示します。       |
+| [rolepanel](./commands/rolepanel.mdx) | ロールパネルの作成や編集をします。               |
+| [settings](./commands/settings.mdx)   | レベルアップ通知やログなどの設定をします。           |
+| [snowflake](./commands/snowflake.mdx) | Snowflake IDを生成したり、日時に変換したりします。 |
+| [status](./commands/status.mdx)       | メンバーの発言数や経験値、ポイントなどを表示します。      |
+
+## 機能一覧
+| 機能名                                  | 概要                                         |
+|--------------------------------------|--------------------------------------------|
+| [電卓](./functions/calculator.mdx)     | 数式を入力すると答えを返します。                           |
+| [引用展開](./functions/quote.mdx)        | メッセージURLを入力すると内容を表示します。                    |
+| [レベリング](./functions/leveling.mdx)    | 発言やログインボーナスなどで経験値が溜まり、レベルアップします。           |
+| [ログ](./functions/logging.mdx)        | メンバーの入退室やメッセージの作成、更新、削除をサーバー内のチャンネルに記録します。 |
+| [ロールパネル](./functions/role-panel.mdx) | ロールの付与、剥奪をします。                             |
+
+## プライバシーポリシー
+本Botを利用する場合、[プライバシーポリシー](../../privacy.mdx)の内容に加え、以下の情報が保存されます。
+
+### サーバー
+| 内容                  | 使用箇所                     |
+|---------------------|--------------------------|
+| ログを記録するチャンネルのID     | settingsコマンド<br/>ログ機能    |
+| レベルアップを通知するチャンネルのID | settingsコマンド<br/>レベリング機能 |
+
+#### ロールパネル
+| 内容          | 使用箇所                       |
+|-------------|----------------------------|
+| サーバーのID     | rolepanelコマンド<br/>ロールパネル機能 |
+| チャンネルのID    | rolepanelコマンド<br/>ロールパネル機能 |
+| メッセージのID    | rolepanelコマンド<br/>ロールパネル機能 |
+| ロールのID      | rolepanelコマンド<br/>ロールパネル機能 |
+| ロールパネルのタイトル | rolepanelコマンド<br/>ロールパネル機能 |
+| ロールパネルの色    | rolepanelコマンド<br/>ロールパネル機能 |
+
+### メンバー
+| 内容       | 使用箇所                                                                               |
+|----------|------------------------------------------------------------------------------------|
+| ユーザーのID  | dailyコマンド<br/>pointコマンド<br/>rankingコマンド<br/>settingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| サーバーのID  | dailyコマンド<br/>pointコマンド<br/>rankingコマンド<br/>settingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| 連続ログイン日数 | dailyコマンド<br/>statusコマンド                                                           |
+
+#### 発言数
+| 内容       | 使用箇所                                                 |
+|----------|------------------------------------------------------|
+| ユーザーのID  | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| サーバーのID  | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| チャンネルのID | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| メッセージのID | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+
+#### ポイント
+| 内容       | 使用箇所                                                 |
+|----------|------------------------------------------------------|
+| ユーザーのID  | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| サーバーのID  | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| チャンネルのID | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| メッセージのID | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| 増減量      | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| 増減理由     | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+
+#### 経験値
+| 内容       | 使用箇所                                                 |
+|----------|------------------------------------------------------|
+| ユーザーのID  | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| サーバーのID  | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| チャンネルのID | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| メッセージのID | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| 増減量      | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
+| 増減理由     | dailyコマンド<br/>rankingコマンド<br/>statusコマンド<br/>レベリング機能 |
