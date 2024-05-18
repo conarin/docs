@@ -77,6 +77,70 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '4Tunes',
+      link: {
+        type: 'doc',
+        id: 'discord/4tunes/index'
+      },
+      items: [
+        'discord/4tunes/index',
+        {
+          type: 'category',
+          label: '変更履歴',
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'discord/4tunes/changelog/index'
+          },
+          items: [
+            'discord/4tunes/changelog/v2',
+            'discord/4tunes/changelog/v1',
+            'discord/4tunes/changelog/v0'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'コマンド',
+          collapsed: false,
+          link: {
+            type: 'doc',
+            id: 'discord/4tunes/commands/index'
+          },
+          items: [
+            'discord/4tunes/commands/avatar',
+            'discord/4tunes/commands/color',
+            'discord/4tunes/commands/daily',
+            'discord/4tunes/commands/delete',
+            'discord/4tunes/commands/ping',
+            'discord/4tunes/commands/point',
+            'discord/4tunes/commands/random',
+            'discord/4tunes/commands/ranking',
+            'discord/4tunes/commands/rolepanel',
+            'discord/4tunes/commands/settings',
+            'discord/4tunes/commands/snowflake',
+            'discord/4tunes/commands/status'
+          ]
+        },
+        {
+          type: 'category',
+          label: '機能',
+          collapsed: false,
+          link: {
+            type: 'doc',
+            id: 'discord/4tunes/functions/index'
+          },
+          items: [
+            'discord/4tunes/functions/calculator',
+            'discord/4tunes/functions/quote',
+            'discord/4tunes/functions/leveling',
+            'discord/4tunes/functions/logging',
+            'discord/4tunes/functions/role-panel'
+          ]
+        }
+      ]
+    },
+    {
+      type: 'category',
       label: 'poker',
       link: {
         type: 'doc',
