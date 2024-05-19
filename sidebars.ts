@@ -11,7 +11,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-  intro: ['index', 'tos', 'privacy', 'trademark', 'contact'],
+  intro: ['index', 'tos', 'privacy', 'trademark', 'thanks', 'contact'],
   discord: [
     'discord/index',
     {
