@@ -1,0 +1,52 @@
+---
+title: はじめに
+---
+
+## 基本仕様
+
+| 名前      | 内容                       |
+|---------|--------------------------|
+| ベースURL  | https://api.conarin.com/ |
+| レートリミット | 60 req/min               |
+| レスポンス形式 | JSON                     |
+
+## エラーレスポンス
+
+| 名前            | 型      | 内容                 |
+|---------------|--------|--------------------|
+| error         | object | エラー情報が格納されたオブジェクト。 |
+| error.code    | number | HTTPステータスコード。      |
+| error.message | string | エラーメッセージ。          |
+
+以下はエラーの例です。状況に応じて内容は変化します。
+
+### 存在しないエンドポイント
+```json
+{
+  "error": {
+    "code": 404,
+    "message": "Not Found"
+  }
+}
+```
+
+### レートリミット
+リセットまでの秒数はレスポンスの`RateLimit-Reset`ヘッダーをご確認ください。
+```json
+{
+    "error": {
+        "code": 429,
+        "message": "Too Many Requests"
+    }
+}
+```
+
+### サーバーエラー
+```json
+{
+    "error": {
+        "code": 500,
+        "message": "Internal Server Error"
+    }
+}
+```
