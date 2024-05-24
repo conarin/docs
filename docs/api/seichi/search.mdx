@@ -1,0 +1,68 @@
+---
+title: ページ検索
+---
+
+ギガンティック☆整地鯖とうんちゃま氏に関連するページを検索できます。  
+追加したいページやキーワードなどがございましたら、お気軽にご連絡ください。  
+使用例はこちら -> https://seichi.conarin.com/search
+
+## エンドポイント
+`GET /seichi/search`
+
+## クエリパラメータ
+| 名前    | 型      | 内容                | 初期値 |
+|-------|--------|-------------------|-----|
+| q     | string | 検索クエリ             | -   |
+| limit | number | 検索結果の上限数(1以上30以下) | 10  |
+
+### 例
+[`GET /seichi/search?q=ルール`](https://api.conarin.com/seichi/search?q=ルール)  
+[`GET /seichi/search?q=rule`](https://api.conarin.com/seichi/search?q=rule)  
+[`GET /seichi/search?q=%E3%83%AB%E3%83%BC%E3%83%AB`](https://api.conarin.com/seichi/search?q=%E3%83%AB%E3%83%BC%E3%83%AB)
+
+## レスポンス
+| 名前              | 型      | 内容           |
+|-----------------|--------|--------------|
+| pages           | array  | ページ情報を格納した配列 |
+| pages\[x]       | object | ページ情報のオブジェクト |
+| pages\[x].title | string | ページタイトル      |
+| pages\[x].url   | string | ページURL       |
+| resultCount     | number | `pages`の件数   |
+| totalCount      | number | 検索結果の総数      |
+
+```json
+{
+    "pages": [
+        {
+            "title": "ルール",
+            "url": "https://www.seichi.network/rule"
+        },
+        {
+            "title": "整地の心得",
+            "url": "https://www.seichi.network/howtoseichi"
+        },
+        {
+            "title": "著作権について",
+            "url": "https://www.seichi.network/q-a-3"
+        },
+        {
+            "title": "著作権ガイドライン",
+            "url": "https://redmine.seichi.click/projects/public/wiki/Copyright_Guide"
+        },
+        {
+            "title": "公式Discordグループ利用の手引き",
+            "url": "https://redmine.seichi.click/projects/public/wiki/Official_Discord_Documents"
+        },
+        {
+            "title": "Tips(非公式wiki)",
+            "url": "https://seichi-click-network.sokuhou.wiki/d/Tips"
+        }
+    ],
+    "resultCount": 6,
+    "totalCount": 6
+}
+```
+
+## 更新履歴
+ - 2022/03/06 公開
+ - 2022/08/04 limitパラメータを追加
