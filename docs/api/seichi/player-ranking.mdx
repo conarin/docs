@@ -1,0 +1,86 @@
+---
+title: プレイヤーランキング
+---
+
+特定のプレイヤーの各種ランキング(整地量・建築量・投票数・接続時間の総合・日間・週間・月間・年間ランキング)を取得できます。  
+使用例はこちら -> https://seichi.conarin.com/ranking/players
+
+## エンドポイント
+`GET /seichi/ranking/players/{playerName}`  
+`GET /seichi/ranking/players/{UUID}`
+
+## クエリパラメータ
+| 名前       | 型      | 内容                                                                       | 初期値        |
+|----------|--------|--------------------------------------------------------------------------|------------|
+| duration | string | ランキングの期間<br/>`total`、`daily`、`weekly`、`monthly`、`yearly`をカンマ区切りで指定       | total      |
+| types    | string | ランキングの種類<br/>`breakCount`、`buildCount`、`playTicks`、`voteCount`をカンマ区切りで指定 | breakCount |
+| date     | string | データの年月日<br/>`YYYY-MM-DD`形式で指定                                            | JSTでの現在の日付 |
+
+### 例
+[`GET /seichi/ranking/players/unchama?duration=total&types=buildCount,breakCount&date=2023-07-05`](https://api.conarin.com/seichi/ranking/players/unchama?duration=total&types=buildCount,breakCount&date=2023-07-05)  
+[`GET /seichi/ranking/players/b66cc3f6-a045-42ad-b4b8-320f20caf140?duration=total&types=buildCount,breakCount&date=2023-07-05`](https://api.conarin.com/seichi/ranking/players/b66cc3f6-a045-42ad-b4b8-320f20caf140?duration=total&types=buildCount,breakCount&date=2023-07-05)
+
+## レスポンス
+### 成功時
+| 名前          | 型      | 内容                                               |
+|-------------|--------|--------------------------------------------------|
+| player      | object | [プレイヤーデータの構造](./player-data.mdx)を参照              |
+| levels      | object | [プレイヤーデータの構造](./player-data.mdx)を参照              |
+| ranks       | array  | [プレイヤーデータの構造](./player-data.mdx)を参照              |
+| lastLoginAt | string | [プレイヤーデータの構造](./player-data.mdx)を参照              |
+| updatedAt   | string | ランキングデータの更新日時<br/>形式は`YYYY-MM-DDThh:mm:ss+09:00` |
+
+```json
+{
+    "player": {
+        "uuid": "b66cc3f6-a045-42ad-b4b8-320f20caf140",
+        "name": "unchama"
+    },
+    "levels": {
+        "seichi": {
+            "level": 55,
+            "starLevel": 0
+        },
+        "build": {
+            "level": 20
+        }
+    },
+    "ranks": [
+        {
+            "duration": "total",
+            "type": "breakCount",
+            "value": "1781920",
+            "rank": 4387
+        },
+        {
+            "duration": "total",
+            "type": "buildCount",
+            "value": "9944",
+            "rank": 2895
+        }
+    ],
+    "lastLoginAt": "1970-01-01T09:00:00+09:00",
+    "updatedAt": "2023-07-05T23:59:33+09:00"
+}
+```
+
+### 例外時
+| 名前            | 型      | 内容                                                                                                                                                                                                                   |
+|---------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| error         | object | エラー情報が格納されたオブジェクト                                                                                                                                                                                                    |
+| error.code    | number | HTTPステータスコード<br/>`400`か`404`か`503`のいずれか                                                                                                                                                                              |
+| error.message | string | エラーメッセージ。以下のいずれか<br/><br/>**400**<br/>・`UUIDかユーザー名の形式が正しくありません。`<br/>**404**<br/>・`存在しないプレイヤーです。`<br/>・`西暦/月/日(曜)のデータはありません。`<br/>**503**<br/>・`データの取得に失敗しました。時間を空けて再度お試しください。`<br/>・`もしこのメッセージが表示されたら開発者に報告お願いします。` |
+
+```json
+{
+    "error": {
+        "code": 404,
+        "message": "2023/07/05(水)のデータはありません。"
+    }
+}
+```
+
+## 更新履歴
+ - 2022/12/24 公開
+ - 2023/07/05 dateパラメータを追加
+ - 2023/09/24 lastLoginAtプロパティを追加
