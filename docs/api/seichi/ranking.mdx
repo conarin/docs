@@ -1,0 +1,94 @@
+---
+title: ランキング
+---
+
+各種ランキング(整地量・建築量・投票数・接続時間の総合・日間・週間・月間・年間ランキング)を取得できます。  
+使用例はこちら -> https://seichi.conarin.com/ranking
+
+## エンドポイント
+`GET /seichi/ranking`
+
+## クエリパラメータ
+| 名前       | 型      | 内容                                                                     | 初期値        |
+|----------|--------|------------------------------------------------------------------------|------------|
+| duration | string | ランキングの期間<br/>`total`、`daily`、`weekly`、`monthly`、`yearly`のいずれかを指定       | total      |
+| type     | string | ランキングの種類<br/>`breakCount`、`buildCount`、`playTicks`、`voteCount`のいずれかを指定 | breakCount |
+| offset   | number | 1位から何位離れているか<br/>0以上の整数を指定                                             | 0          |
+| limit    | number | 結果の上限<br/>1以上100以下の整数を指定                                               | 20         |
+| date     | string | データの年月日<br/>`YYYY-MM-DD`形式で指定                                          | JSTでの現在の日付 |
+
+### 例
+[`GET /seichi/ranking?duration=total&type=breakCount&offset=0&limit=1&date=2023-07-05`](https://api.conarin.com/seichi/ranking?duration=total&type=breakCount&offset=0&limit=1&date=2023-07-05)
+
+## レスポンス
+### 成功時
+| 名前          | 型      | 内容                                                       |
+|-------------|--------|----------------------------------------------------------|
+| ranks       | array  | 順位の昇順(1, 2, 3...)でソートされた[プレイヤーデータ](./player-data.mdx)の配列 |
+| ranks\[x]   | object | [プレイヤーデータの構造](./player-data.mdx)を参照                      |
+| resultCount | number | `ranks`の件数                                               |
+| totalCount  | number | ランキングの総数                                                 |
+| updatedAt   | string | ランキングデータの更新日時<br/>形式は`YYYY-MM-DDThh:mm:ss+09:00`         |
+| params      | object | 実際に解釈されたパラメータ<br/>パラメータ名、型、値の候補や範囲はクエリパラメータと同一           |
+
+```json
+{
+    "ranks": [
+        {
+            "player": {
+                "uuid": "6d705d18-296a-47d9-b5cf-1b557c7a35e7",
+                "name": "Ys12"
+            },
+            "levels": {
+                "seichi": {
+                    "level": 200,
+                    "starLevel": 269
+                },
+                "build": {
+                    "level": 15
+                }
+            },
+            "ranks": [
+                {
+                    "duration": "total",
+                    "type": "breakCount",
+                    "value": "23435689052",
+                    "rank": 1
+                }
+            ],
+            "lastLoginAt": "1970-01-01T09:00:00+09:00"
+        }
+    ],
+    "resultsCount": 1,
+    "totalCount": 34067,
+    "updatedAt": "2023-07-05T23:59:33+09:00",
+    "params": {
+        "duration": "total",
+        "type": "breakCount",
+        "offset": 0,
+        "limit": 1,
+        "date": "2023-07-05"
+    }
+}
+```
+
+### 例外時
+| 名前            | 型      | 内容                                                                                                             |
+|---------------|--------|----------------------------------------------------------------------------------------------------------------|
+| error         | object | エラー情報が格納されたオブジェクト                                                                                              |
+| error.code    | number | HTTPステータスコード<br/>`404`か`503`のいずれか                                                                              |
+| error.message | string | エラーメッセージ。以下のいずれか<br/><br/>**404**<br/>・`西暦/月/日(曜)のデータはありません。`<br/>**503**<br/>・`もしこのメッセージが表示されたら開発者に報告お願いします。` |
+
+```json
+{
+    "error": {
+        "code": 404,
+        "message": "2023/07/05(水)のデータはありません。"
+    }
+}
+```
+
+## 更新履歴
+ - 2022/11/22 公開
+ - 2023/07/05 dateパラメータを追加
+ - 2023/09/24 lastLoginAtプロパティを追加
