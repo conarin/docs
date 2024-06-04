@@ -25,7 +25,7 @@ title: プレイヤーデータの構造
 | ranks                   | array  | ランキングデータのオブジェクトが格納された配列                                                                                          |
 | ranks\[x]               | object | ランキングデータのオブジェクト                                                                                                  |
 | ranks\[x].duration      | string | ランキングの期間。`total`、`daily`、`weekly`、`monthly`、`yearly`のいずれか                                                        |
-| ranks\[x].type          | string | ランキングの種類。`breakCount`、`buildCount`、`playTicks`、`voteCount`のいずれか                                                  |
+| ranks\[x].type          | string | ランキングの種類。`break_count`、`build_count`、`play_ticks`、`vote_count`のいずれか                                              |
 | ranks\[x].value         | string | ランキングの値。それぞれの単位は、整地・建築量はブロック数、接続時間はtick(1/20秒)、投票数は投票回数                                                          |
 | ranks\[x].rank          | number | ランキングの順位                                                                                                         |
 | lastLoginAt             | string | 最終ログイン日時(厳密にはプレイヤーのログイン時間が増加した日時)。<br/>形式は`YYYY-MM-DDThh:mm:ss+09:00`。データが無いプレイヤーは`1970-01-01T09:00:00+09:00`が返る |
@@ -48,7 +48,7 @@ title: プレイヤーデータの構造
     "ranks": [
         {
             "duration": "total",
-            "type": "breakCount",
+            "type": "break_count",
             "value": "1781920",
             "rank": 4387
         }

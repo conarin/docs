@@ -17,15 +17,15 @@ title: プレイヤーランキング
 `GET /seichi/ranking/players/{UUID}`
 
 ## クエリパラメータ
-| 名前       | 型      | 内容                                                                       | 初期値        |
-|----------|--------|--------------------------------------------------------------------------|------------|
-| duration | string | ランキングの期間<br/>`total`、`daily`、`weekly`、`monthly`、`yearly`をカンマ区切りで指定       | total      |
-| types    | string | ランキングの種類<br/>`breakCount`、`buildCount`、`playTicks`、`voteCount`をカンマ区切りで指定 | breakCount |
-| date     | string | データの年月日<br/>`YYYY-MM-DD`形式で指定                                            | JSTでの現在の日付 |
+| 名前       | 型      | 内容                                                                           | 初期値         |
+|----------|--------|------------------------------------------------------------------------------|-------------|
+| duration | string | ランキングの期間<br/>`total`、`daily`、`weekly`、`monthly`、`yearly`をカンマ区切りで指定           | total       |
+| types    | string | ランキングの種類<br/>`break_count`、`build_count`、`play_ticks`、`vote_count`をカンマ区切りで指定 | break_count |
+| date     | string | データの年月日<br/>`YYYY-MM-DD`形式で指定                                                | JSTでの現在の日付  |
 
 ### 例
-[`GET /seichi/ranking/players/unchama?duration=total&types=buildCount,breakCount&date=2023-07-05`](https://api.conarin.com/seichi/ranking/players/unchama?duration=total&types=buildCount,breakCount&date=2023-07-05)  
-[`GET /seichi/ranking/players/b66cc3f6-a045-42ad-b4b8-320f20caf140?duration=total&types=buildCount,breakCount&date=2023-07-05`](https://api.conarin.com/seichi/ranking/players/b66cc3f6-a045-42ad-b4b8-320f20caf140?duration=total&types=buildCount,breakCount&date=2023-07-05)
+[`GET /seichi/ranking/players/unchama?duration=total&types=build_count,break_count&date=2023-07-05`](https://api.conarin.com/seichi/ranking/players/unchama?duration=total&types=build_count,break_count&date=2023-07-05)  
+[`GET /seichi/ranking/players/b66cc3f6-a045-42ad-b4b8-320f20caf140?duration=total&types=build_count,break_count&date=2023-07-05`](https://api.conarin.com/seichi/ranking/players/b66cc3f6-a045-42ad-b4b8-320f20caf140?duration=total&types=build_count,break_count&date=2023-07-05)
 
 ## レスポンス
 ### 成功時
@@ -55,13 +55,13 @@ title: プレイヤーランキング
     "ranks": [
         {
             "duration": "total",
-            "type": "breakCount",
+            "type": "break_count",
             "value": "1781920",
             "rank": 4387
         },
         {
             "duration": "total",
-            "type": "buildCount",
+            "type": "build_count",
             "value": "9944",
             "rank": 2895
         }

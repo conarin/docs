@@ -16,16 +16,16 @@ title: ランキング
 `GET /seichi/ranking`
 
 ## クエリパラメータ
-| 名前       | 型      | 内容                                                                     | 初期値        |
-|----------|--------|------------------------------------------------------------------------|------------|
-| duration | string | ランキングの期間<br/>`total`、`daily`、`weekly`、`monthly`、`yearly`のいずれかを指定       | total      |
-| type     | string | ランキングの種類<br/>`breakCount`、`buildCount`、`playTicks`、`voteCount`のいずれかを指定 | breakCount |
-| offset   | number | 1位から何位離れているか<br/>0以上の整数を指定                                             | 0          |
-| limit    | number | 結果の上限<br/>1以上100以下の整数を指定                                               | 20         |
-| date     | string | データの年月日<br/>`YYYY-MM-DD`形式で指定                                          | JSTでの現在の日付 |
+| 名前       | 型      | 内容                                                                         | 初期値         |
+|----------|--------|----------------------------------------------------------------------------|-------------|
+| duration | string | ランキングの期間<br/>`total`、`daily`、`weekly`、`monthly`、`yearly`のいずれかを指定           | total       |
+| type     | string | ランキングの種類<br/>`break_count`、`build_count`、`play_ticks`、`vote_count`のいずれかを指定 | break_count |
+| offset   | number | 1位から何位離れているか<br/>0以上の整数を指定                                                 | 0           |
+| limit    | number | 結果の上限<br/>1以上100以下の整数を指定                                                   | 20          |
+| date     | string | データの年月日<br/>`YYYY-MM-DD`形式で指定                                              | JSTでの現在の日付  |
 
 ### 例
-[`GET /seichi/ranking?duration=total&type=breakCount&offset=0&limit=1&date=2023-07-05`](https://api.conarin.com/seichi/ranking?duration=total&type=breakCount&offset=0&limit=1&date=2023-07-05)
+[`GET /seichi/ranking?duration=total&type=break_count&offset=0&limit=1&date=2023-07-05`](https://api.conarin.com/seichi/ranking?duration=total&type=break_count&offset=0&limit=1&date=2023-07-05)
 
 ## レスポンス
 ### 成功時
@@ -58,7 +58,7 @@ title: ランキング
             "ranks": [
                 {
                     "duration": "total",
-                    "type": "breakCount",
+                    "type": "break_count",
                     "value": "23435689052",
                     "rank": 1
                 }
@@ -71,7 +71,7 @@ title: ランキング
     "updatedAt": "2023-07-05T23:59:33+09:00",
     "params": {
         "duration": "total",
-        "type": "breakCount",
+        "type": "break_count",
         "offset": 0,
         "limit": 1,
         "date": "2023-07-05"
