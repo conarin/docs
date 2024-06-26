@@ -76,7 +76,13 @@ const config: Config = {
         autoCollapseCategories: true
       }
     }
-  } satisfies Preset.ThemeConfig
+  } satisfies Preset.ThemeConfig,
+
+  markdown: {
+    mermaid: true
+  },
+
+  themes: ['@docusaurus/theme-mermaid']
 };
 
 export default config;
