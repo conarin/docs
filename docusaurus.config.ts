@@ -60,6 +60,12 @@ const config: Config = {
           sidebarId: 'api',
           label: 'API',
           position: 'left'
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'vrchat',
+          label: 'VRChat',
+          position: 'left'
         }
       ]
     },

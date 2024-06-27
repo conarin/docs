@@ -179,6 +179,9 @@ const sidebars: SidebarsConfig = {
         'api/seichi/player-data',
       ]
     }
+  ],
+  vrchat: [
+    'vrchat/index'
   ]
 };
 
