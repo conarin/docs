@@ -181,7 +181,8 @@ const sidebars: SidebarsConfig = {
     }
   ],
   vrchat: [
-    'vrchat/index'
+    'vrchat/index',
+    'vrchat/v-suitch/index'
   ]
 };
 
