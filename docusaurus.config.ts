@@ -93,6 +93,7 @@ const config: Config = {
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       ({
+        docsRouteBasePath: '/',
         hashed: true,
         language: ['ja']
       })
